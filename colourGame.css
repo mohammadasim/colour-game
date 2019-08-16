@@ -1,23 +1,45 @@
-body{
+body {
     background-color: #232323;
 }
-.square{
+
+.square {
     width: 30%;
     background: purple;
     float: left;
     margin: 1.66%;
     padding-bottom: 30%;
 }
-#container{
+
+#container {
     margin: 0 auto;
     max-width: 600px;
 }
-h1{
+
+h1 {
     color: white;
 }
-#colourDisplay{
+
+#colourDisplay {
     text-transform: uppercase;
 }
-span{
+
+/* span{
     color: white;
+} */
+
+#stripe {
+    background-color: white;
+    height: 40px;
+    text-align: center;
+    padding: 1px;
+    color: black;
+}
+#message{
+    padding-top: 9px;
+}
+.btn-light{
+    margin-top: 2px;
+}
+.selected{
+    background: blue;
 }

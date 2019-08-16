@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,14 @@
     <link rel="stylesheet" href="colourGame.css">
     <title>Colour Game</title>
 </head>
+
 <body>
     <h1>The Great <span id=colourDisplay>RGB</span> Colour Game</h1>
-    <div>
+    <div id="stripe">
+        <button type="button" id="reset" class="btn btn-light btn-sm">New Colours</button>
         <span id="message"></span>
+        <button type="button" id="easy" class="btn btn-light btn-sm">Easy</button>
+        <button type="button" id="hard" class="btn btn-light btn-sm">Hard</button>
     </div>
     <div id="container">
         <div class="square"></div>
@@ -24,4 +29,5 @@
     </div>
     <script src="colourGame.js"></script>
 </body>
+
 </html>
