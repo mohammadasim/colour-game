@@ -7,33 +7,38 @@ var h1 = document.querySelector("h1");
 var newColourButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easy");
 var hardBtn = document.querySelector("#hard");
+var gameMode = 'hard';
 
 colourDisplay.textContent = pickedColour;
 
-easyBtn.addEventListener("click", function(){
+easyBtn.addEventListener("click", function () {
     hardBtn.classList.remove("selected");
     easyBtn.classList.add("selected");
+    setGameDifficultyLevel('easy');
+    gameMode = 'easy';
+    message.textContent = "";
 });
 
-hardBtn.addEventListener("click", function(){
+
+hardBtn.addEventListener("click", function () {
     easyBtn.classList.remove("selected");
     hardBtn.classList.add("selected");
+    setGameDifficultyLevel('hard');
+    gameMode = 'hard';
+    message.textContent = "";
 });
 
 
 
 newColourButton.addEventListener("click", function () {
-    // Generate new random colours
-    colours = generateRandomColours(6);
-    // pick a new random colour from array
-    pickedColour = pickColour();
-    // Change the display colour to match the new picked colour
-    colourDisplay.textContent = pickedColour;
-    // change colours of the squares
-    for (i = 0; i < colourSquares.length; i++) {
-        colourSquares[i].style.backgroundColor = colours[i];
+    if (gameMode === 'easy') {
+        setGameDifficultyLevel('easy');
     }
-    h1.style.backgroundColor = "#232323";
+    else if (gameMode === 'hard') {
+        setGameDifficultyLevel('hard');
+    }
+    h1.style.backgroundColor = "steelblue";
+    message.textContent = "";
 
 });
 
@@ -50,7 +55,7 @@ for (i = 0; i < colourSquares.length; i++) {
             newColourButton.textContent = "Play Again?";
         }
         else {
-            this.style.backgroundColor = '#232323';
+            this.style.backgroundColor = 'steelblue';
             message.textContent = "Try Again";
         }
     });
@@ -79,4 +84,38 @@ function randomColourGenerator() {
     var green = Math.floor(Math.random() * 256);
     var blue = Math.floor(Math.random() * 256);
     return 'rgb(' + red + ', ' + green + ', ' + blue + ')'
+}
+
+function setGameDifficultyLevel(mode) {
+    if (mode === 'easy') {
+        colours = generateRandomColours(3);
+        // pick a new random colour from the three generated
+        pickedColour = pickColour();
+        // show the new picked colour in the heading
+        colourDisplay.textContent = pickedColour;
+        // loop through the squares and hide the bottom squares
+        for (var i = 0; i < colourSquares.length; i++) {
+            if (colours[i]) {
+                colourSquares[i].style.backgroundColor = colours[i];
+            }
+            else {
+                colourSquares[i].style.display = "none";
+            }
+        }
+    }
+    else if (mode === 'hard') {
+        colours = generateRandomColours(6);
+        // pick a new random colour from the three generated
+        pickedColour = pickColour();
+        // show the new picked colour in the heading
+        colourDisplay.textContent = pickedColour;
+        // loop through the squares and hide the bottom squares
+        for (var i = 0; i < colourSquares.length; i++) {
+            colourSquares[i].style.backgroundColor = colours[i];
+            colourSquares[i].style.display = "block";
+
+        }
+
+    }
+
 }

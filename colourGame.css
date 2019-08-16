@@ -8,6 +8,7 @@ body {
     float: left;
     margin: 1.66%;
     padding-bottom: 30%;
+    border-radius: 25px;
 }
 
 #container {
@@ -16,16 +17,16 @@ body {
 }
 
 h1 {
+    text-align: center;
     color: white;
+    background: steelblue;
+    margin-bottom: 0;
 }
 
 #colourDisplay {
     text-transform: uppercase;
+    display: block;
 }
-
-/* span{
-    color: white;
-} */
 
 #stripe {
     background-color: white;
@@ -34,12 +35,15 @@ h1 {
     padding: 1px;
     color: black;
 }
-#message{
+
+#message {
     padding-top: 9px;
 }
-.btn-light{
-    margin-top: 2px;
+
+.btn-light {
+    margin: auto;
 }
-.selected{
+
+.selected {
     background: blue;
 }
