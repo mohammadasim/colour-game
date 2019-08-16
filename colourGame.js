@@ -39,6 +39,7 @@ newColourButton.addEventListener("click", function () {
     }
     h1.style.backgroundColor = "steelblue";
     message.textContent = "";
+    this.textContent = "new colours";
 
 });
 
