@@ -55,7 +55,7 @@ for (i = 0; i < colourSquares.length; i++) {
             newColourButton.textContent = "Play Again?";
         }
         else {
-            this.style.backgroundColor = 'steelblue';
+            this.style.backgroundColor = '#232323';
             message.textContent = "Try Again";
         }
     });
